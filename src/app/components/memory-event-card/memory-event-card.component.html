@@ -1,0 +1,36 @@
+<mat-form-field appearance="fill">
+  <mat-label>Select Date Range</mat-label>
+  <mat-select (selectionChange)="getDateInterval($event)" [(value)]="dateOptions[0]">
+    <mat-option *ngFor="let option of dateOptions" [value]="option">
+      {{ option }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-accordion class="example-headers-align">
+  <div *ngFor="let story of stories">
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title> {{ story.title }}</mat-panel-title>
+        <mat-panel-description
+          >{{ story.date }} - {{ durationMessage(story) }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Activities</p>
+      <mat-list role="list">
+        <div *ngFor="let achievement of story.achievements; index as i">
+          <mat-list-item role="listitem"
+            >{{ i + 1 }}. {{ achievement }}</mat-list-item
+          >
+        </div>
+      </mat-list>
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="edit()">Edit</button>
+        <button mat-button color="primary" (click)="delete()">Delete</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </div>
+</mat-accordion>

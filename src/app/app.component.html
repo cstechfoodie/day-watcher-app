@@ -1,9 +1,13 @@
-<mat-toolbar>
-    <span>Day Warcher</span>
-  </mat-toolbar>
-  <mat-drawer-container class="example-container">
-    <mat-drawer mode="side" opened>Drawer content</mat-drawer>
-    <mat-drawer-content>Main content</mat-drawer-content>
-  </mat-drawer-container>
-  
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <span>Day Warcher</span>
+</mat-toolbar>
+<mat-drawer-container class="main-container">
+  <mat-drawer style="width: 80px" mode="side" opened>
+    <div class="vertical-center">
+      <button mat-fab color="primary">Create</button>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content style="margin-left: 80px"
+    ><router-outlet></router-outlet
+  ></mat-drawer-content>
+</mat-drawer-container>

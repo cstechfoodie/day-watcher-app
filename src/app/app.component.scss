@@ -1,8 +1,19 @@
-.example-container {
+.main-container {
   position: absolute;
   top: 64px;
   bottom: 0;
   left: 0;
   right: 0;
-  background: #eee;
+  background: #555;
+}
+
+.vertical-center {
+  margin-top: 10px;
+  display: block;
+  justify-content: center;
+
+  button {
+    margin-bottom: 8px;
+    margin-left: 12px;
+  }
 }
